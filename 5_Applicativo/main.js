@@ -1,0 +1,3 @@
+function accessoMic() {
+    getUserMedia(Audio);
+}
