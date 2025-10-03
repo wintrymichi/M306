@@ -64,8 +64,10 @@ body {
     transition: .2s;
 }
 
-#toggleMicButton:hover, .instrumentTypeButton:hover  {
-    background-color: var(--customBlue);
+
+
+#toggleMicButton:hover, .instrumentTypeButton:hover,.button:hover  {
+    background-color: var(--customBlue) !important;
     cursor:pointer;
 }
 
@@ -168,4 +170,12 @@ body {
 
 #debugDiv {
     display:none;
+}
+
+
+.button{
+    border: solid var(--customBlue) 1px;
+    background-color: transparent !important;
+    transition: .2s;
+
 }

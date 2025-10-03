@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <title>TuneJS</title>
 </head>
 <body onload="init()">
@@ -17,13 +14,11 @@
         <p id="title">TuneJS</p>
         <p id="subtitle">Accordatore professionale per strumenti a corde</p>
     </div>
-
     <div id="main">
         <div id="leftDiv">
-            <p class="instrumentTypeButton selected">Chitarra</p>
-            <p class="instrumentTypeButton">Ukulele</p>
-            <p class="instrumentTypeButton">Personalizzato</p>
-
+            <p class="instrumentTypeButton selected" id="guitarButton" onclick="selectInstrument(0)">Chitarra</p>
+            <p class="instrumentTypeButton" id="ukuleleButton" onclick="selectInstrument(1)">Ukulele</p>
+            <p class="instrumentTypeButton" id="customButton" onclick="selectInstrument(2)">Personalizzato</p>
             <div id="tuningDiv">            
                 <p id="chordIndicator">E4</p>
                 <p id="tuneFreq">326.0</p>
@@ -37,19 +32,12 @@
                     <span>30</span>
                     <span>50</span>
                 </div>
-            
             </div>
             <div id="toggleMicButton" onclick="toggleMic()">
                 <p class="material-icons" style="font-size:30px">mic</p>
                 <p>Attiva microfono</p>
-
             </div>
-            
-
-
-
         </div>
-
         <div id="rightDiv">
             <div id="settingsTitleDiv">
                 <p class="material-icons" style="font-size:30px">settings</p>
@@ -59,37 +47,14 @@
     
             <div id="toneRefDiv">
                 <input id="toneRefInput" type="range" min="400" max="450" value="440">
-                <span id="toneDesc">xxx Hz</span>
+                <span id="toneDesc">xxx Hz</span>Hz
             </div>
-
             <p>Corde strumento</p>
             <div id="instrumentChords">
             </div>
         </div>
-
-
-
-
-
-
-
-
-
     </div>
-   
-
-    
-
-
-    <div id="debugDiv">
-        <p>frequenza rilevata: <span id="currentFreq"></span></p>
-        <p>accordatura corrente: <span id="currentTune"></span></p>
-        <p>corda corrente: <span id="currentChord"></span></p>
-    </div>
-
-    <button id="debugButton" onclick="showDebug()">mostra debug</button>
-
 <script src="main.js"></script>
-
+<audio id="player"></audio>
 </body>
 </html>
